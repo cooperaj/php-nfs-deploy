@@ -34,3 +34,10 @@ shared:
   - app/files
   - app/sessions
 ```
+
+### Building
+```shell
+$ go get
+$ go get github.com/mitchellh/gox
+$ gox -os="linux darwin" -arch="amd64 arm64" -osarch="\!darwin/arm64"
+```
