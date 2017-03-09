@@ -3,7 +3,7 @@ PHP NFS Deploy
 
 A small application to allow the speedy running of large/modern PHP applications inside docker containers when running on shared storage such as NFS or glusterfs - whilst retaining the ability to keep the files that must be synced (typically for clustering purposes) such as file uploads.
 
-```bash
+```
 NAME:
    deploy - Sets up modern PHP apps to work better when using docker
 
