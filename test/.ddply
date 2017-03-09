@@ -1,0 +1,4 @@
+shared:
+  - extensions
+  - files
+  - app/config
