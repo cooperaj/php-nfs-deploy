@@ -29,7 +29,7 @@ func main() {
 
 	app := cli.NewApp()
 	app.Name = "deploy"
-	app.Version = "1.0.0"
+	app.Version = "0.9.1"
 	app.Usage = "Sets up modern PHP apps to work better when using docker"
 	cli.AppHelpTemplate = `NAME:
    {{.Name}} - {{.Usage}}
