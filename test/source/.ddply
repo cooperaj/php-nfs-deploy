@@ -1,0 +1,3 @@
+shared:
+  - app/config
+  - app/database
