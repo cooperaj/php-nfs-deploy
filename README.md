@@ -43,5 +43,5 @@ $ git clone git@github.com:cooperaj/php-nfs-deploy.git \
 $ cd $GOPATH/github.com/cooperaj/deploy
 $ go get
 $ go get github.com/mitchellh/gox
-$ gox -os="linux darwin" -arch="amd64 arm64" -osarch="\!darwin/arm64"
+$ gox -os="linux darwin" -arch="amd64 arm64" -osarch="\!darwin/arm64" -ldflags="-s -w"
 ```
