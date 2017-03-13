@@ -51,6 +51,8 @@ func CopyFile(src string, dst string) (err error) {
 		}
 	}()
 
+	logger.Debugf("\tName: %s", out.Name())
+
 	_, err = io.Copy(out, in)
 	if err != nil {
 		return
@@ -70,12 +72,18 @@ func CopyFile(src string, dst string) (err error) {
 		return
 	}
 
+	logger.Debugf("\t\tMode: %s", si.Mode())
+
 	err = os.Chown(dst,
 		int(si.Sys().(*syscall.Stat_t).Uid),
 		int(si.Sys().(*syscall.Stat_t).Gid))
 	if err != nil {
 		return
 	}
+
+	logger.Debugf("\t\tOwner: %d.%d",
+		int(si.Sys().(*syscall.Stat_t).Uid),
+		int(si.Sys().(*syscall.Stat_t).Gid))
 
 	return
 }
@@ -94,6 +102,7 @@ func CopyDir(src string, dst string) (err error) {
 		return err
 	}
 	if !si.IsDir() {
+		logger.Warningf("Source directory given %s is not a directory.\n", src)
 		return fmt.Errorf("source is not a directory")
 	}
 

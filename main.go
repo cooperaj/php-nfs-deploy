@@ -101,8 +101,9 @@ GLOBAL OPTIONS:
 			}
 
 			// was able to find and read config file
-			logger.Debugf("Shared locations from config: %s\n", config.Shared)
+			logger.Infof("Shared locations from config: %s\n", config.Shared)
 
+			logger.Infof("Copying directories...")
 			CopyDir(source, destination)
 			LinkShared(config.Shared, source, destination)
 		}

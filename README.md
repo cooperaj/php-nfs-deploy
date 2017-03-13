@@ -23,7 +23,7 @@ GLOBAL OPTIONS:
 ### Configuration
 Configuration of the folders to sync and the ones to link is achieved via the use of a `.ddply` file.
 
-The presence of such a file in the source directory of your application will cause the full contents of the source directory to be copied to the destinaion folder.
+The presence of such a file in the source directory of your application will cause the full contents of the source directory to be copied to the destination folder.
 
 Omitting the file will cause a symlink to be created at the destination pointing at the source directory.
 
