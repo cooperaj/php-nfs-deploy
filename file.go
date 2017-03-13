@@ -106,8 +106,13 @@ func CopyDir(src string, dst string) (err error) {
 		return fmt.Errorf("source is not a directory")
 	}
 
-	_, err = os.Stat(dst)
+	di, err := os.Lstat(dst)
 	if err != nil && !os.IsNotExist(err) {
+		return
+	}
+
+	if di != nil && di.Mode()&os.ModeSymlink != 0 {
+		logger.Infof("Destination directory %s is a symlink.\n", dst)
 		return
 	}
 
